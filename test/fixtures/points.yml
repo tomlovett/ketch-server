@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  our_score: 1
+  their_score: 1
+  we_pulled: false
+  we_scored: false
+
+two:
+  our_score: 1
+  their_score: 1
+  we_pulled: false
+  we_scored: false

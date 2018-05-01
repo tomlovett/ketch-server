@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  closed: false
+  our_score: 1
+  their_score: 1
+
+two:
+  closed: false
+  our_score: 1
+  their_score: 1
