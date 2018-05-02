@@ -30,6 +30,6 @@ module KetchServer
     # Skip views, helpers and assets when generating a new resource.
     config.api_only = true
 
-    config.relative_url_root = "/api"
+    # config.root_url = "/api"
   end
 end
