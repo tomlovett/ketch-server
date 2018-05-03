@@ -15,7 +15,6 @@ class UsersController < ApplicationController
 
   # POST /users
   def create
-    byebug
     @user = User.new(user_params)
 
     if @user.save
@@ -47,6 +46,8 @@ class UsersController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def user_params
-      params.fetch(:user, {})
+      p params
+      # params.fetch(:user, {})
+      params.require(:user).permit(:first_name, :last_name, :nickname, :gender)
     end
 end
