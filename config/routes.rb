@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :users
   resources :games, only: [:create, :index, :show, :update]
   resources :players, only: [:create, :index, :show, :update, :destroy]
   resources :points, only: [:create, :index, :update]
