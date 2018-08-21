@@ -46,6 +46,6 @@ class StatsController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def stat_params
-      params.require(:stat).permit(:type)
+      params.require(:data).require(:attributes).permit(:type)
     end
 end

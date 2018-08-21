@@ -26,6 +26,7 @@ class PlayersController < ApplicationController
 
   # PATCH/PUT /players/1
   def update
+    p "player_params: #{player_params}"
     if @player.update(player_params)
       render json: @player
     else
@@ -46,6 +47,6 @@ class PlayersController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def player_params
-      params.require(:player).permit(:firstName, :gender, :lastName, :nickname)
+      params.require(:data).require(:attributes).permit(:first_name, :gender, :last_name, :nickname)
     end
 end

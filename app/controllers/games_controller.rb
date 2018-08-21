@@ -46,6 +46,6 @@ class GamesController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def game_params
-      params.require(:game).permit(:closed, :our_score, :their_score)
+      params.require(:data).require(:attributes).permit(:closed, :our_score, :their_score, :opponent_id)
     end
 end

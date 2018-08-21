@@ -46,6 +46,6 @@ class PointsController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def point_params
-      params.require(:point).permit(:our_score, :their_score, :we_pulled, :we_scored)
+      params.require(:data).require(:attributes).permit(:our_score, :their_score, :we_pulled, :we_scored)
     end
 end
