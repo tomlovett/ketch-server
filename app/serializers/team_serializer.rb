@@ -5,4 +5,5 @@ class TeamSerializer
   attributes :id, :name, :primary, :secondary
   has_many :players
   has_many :users
+  has_many :games
 end
