@@ -5,12 +5,12 @@ class PlayersController < ApplicationController
   def index
     @players = Player.all
 
-    render json: @players
+    render json: PlayerSerializer.new(@players).serialized_json
   end
 
   # GET /players/1
   def show
-    render json: @player
+    render json: PlayerSerializer.new(@player).serialized_json
   end
 
   # POST /players

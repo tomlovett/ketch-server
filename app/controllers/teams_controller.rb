@@ -5,12 +5,12 @@ class TeamsController < ApplicationController
   def index
     @teams = Team.all
 
-    render json: @teams
+    render json: TeamSerializer.new(@teams).serialized_json
   end
 
   # GET /teams/1
   def show
-    render json: @team
+    render json: TeamSerializer.new(@team).serialized_json
   end
 
   # POST /teams
