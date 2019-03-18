@@ -26,7 +26,6 @@ class PlayersController < ApplicationController
 
   # PATCH/PUT /players/1
   def update
-    p "player_params: #{player_params}"
     if @player.update(player_params)
       render json: PlayerSerializer.new(@player)
     else
