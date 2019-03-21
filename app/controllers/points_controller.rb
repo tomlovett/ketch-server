@@ -3,14 +3,14 @@ class PointsController < ApplicationController
 
   # GET /points
   def index
-    @points = Point.all
+    @points = Point.where(game_id: params['game_id'])
 
-    render json: @points
+    render json: PointSerializer.new(@points).serialized_json
   end
 
   # GET /points/1
   def show
-    render json: @point
+    render json: PointSerializer.new(@point).serialized_json
   end
 
   # POST /points
@@ -18,18 +18,18 @@ class PointsController < ApplicationController
     @point = Point.new(point_params)
 
     if @point.save
-      render json: @point, status: :created, location: @point
+      render json: PointSerializer.new(@point).serialized_json, status: :created, location: @point
     else
-      render json: @point.errors, status: :unprocessable_entity
+      render json: PointSerializer.new(@point.errors).serialized_json, status: :unprocessable_entity
     end
   end
 
   # PATCH/PUT /points/1
   def update
     if @point.update(point_params)
-      render json: @point
+      render json: PointSerializer.new(@point).serialized_json
     else
-      render json: @point.errors, status: :unprocessable_entity
+      render json: PointSerializer.new(@point.errors).serialized_json, status: :unprocessable_entity
     end
   end
 
